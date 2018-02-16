@@ -10,6 +10,7 @@ class MusicSearch extends Component {
       musicInput: "",
       musicList: [],
       resultCount: 0,
+      showResults: false
     };
   }
 
@@ -32,7 +33,7 @@ class MusicSearch extends Component {
                   albumArt={item.artworkUrl60} />
         })
         console.log('musicList: ', musicList)
-        this.setState({musicList, resultCount: results.resultCount})
+        this.setState({musicList, resultCount: results.resultCount, showResults: true})
       },
       error:(err) => {
         console.log('handleMusicInput ajax error: ', err);
@@ -59,21 +60,21 @@ class MusicSearch extends Component {
               Submit
             </button>
           </div>
-          <div>Results: {this.state.resultCount}</div>
-          <div>
-            <table style={{width:'100%'}}>
-              <tbody>
-                <tr>
-                  <th>Album Image</th>
-                  <th>Artist Name</th>
-                  <th>Track Name</th>
-                  <th>Album Name</th>
-                  <th>Lyrics</th>
-                </tr>
-                {this.state.musicList}
-              </tbody>
-            </table>
-          </div>
+          {this.state.showResults && <div>Results: {this.state.resultCount}</div>}
+          {this.state.showResults && <div>
+              <table style={{width:'100%'}}>
+                <tbody>
+                  <tr>
+                    <th>Album Image</th>
+                    <th>Artist Name</th>
+                    <th>Track Name</th>
+                    <th>Album Name</th>
+                    <th>Lyrics</th>
+                  </tr>
+                  {this.state.musicList}
+                </tbody>
+              </table>
+            </div>}
         </div>
     );
   }
