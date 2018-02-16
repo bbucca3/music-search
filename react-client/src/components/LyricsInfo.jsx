@@ -6,7 +6,6 @@ class LyricsInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      url:'',
       statusText: '',
       song: {}
     }
@@ -15,12 +14,8 @@ class LyricsInfo extends Component {
   }
 
   componentDidMount() {
-
     let artist = this.props.location.query.artistName.split(' ').join('+')
     let song = this.props.location.query.trackName.split(' ').join('+')
-    let url = `http://lyrics.wikia.com/api.php?func=getSong&artist=${artist}&song=${song}&fmt=json`
-    this.setState({url})
-    // console.log(url)
     $.ajax({
       type:'POST',
       url:'/api/lyricsearch',
