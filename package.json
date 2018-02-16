@@ -12,7 +12,8 @@
     "heroku-postbuild": "webpack -p",
     "start": "node server/index.js",
     "react-dev": "webpack -d --watch",
-    "server-dev": "nodemon server/index.js"
+    "server-dev": "nodemon server/index.js",
+    "test": "jest"
   },
   "dependencies": {
     "babel-core": "^6.23.1",
@@ -28,9 +29,14 @@
     "request": "^2.81.0",
     "webpack": "^2.6.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-jest": "^20.0.3",
+    "jest": "^20.0.4",
+    "react-test-renderer": "^15.6.1"
+  },
   "babel": {
     "presets": [
+      "react",
       "es2015"
     ]
   }

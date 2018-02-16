@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders MusicInfo correctly 1`] = `
+<div>
+  <tr>
+    <td>
+      <img
+        alt={undefined}
+        src={undefined}
+      />
+    </td>
+    <td />
+    <td />
+    <td />
+    <td>
+      <a
+        onClick={[Function]}
+        style={Object {}}
+      >
+        Lyrics
+      </a>
+    </td>
+  </tr>
+</div>
+`;
+
+exports[`renders MusicSearch correctly 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "marginLeft": "auto",
+        "marginRight": "auto",
+        "width": "90%",
+      }
+    }
+  >
+    <h3>
+      Search for Musical Artist or Song: 
+      
+    </h3>
+    <div
+      className="form-group"
+    >
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="enter search term"
+      />
+      <button
+        className="form-control"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "transparent",
+            "border": "1px solid darkGreen",
+            "borderRadius": "4px",
+            "color": "darkGreen",
+            "cursor": "pointer",
+            "fontSize": "1rem",
+            "fontWeight": "200",
+            "margin": "10px 0",
+            "outline": "none",
+            "textAlign": "center",
+            "transition": "all 0.3s ease",
+          }
+        }
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders react 1`] = `
+<h6>
+  ok
+</h6>
+`;
