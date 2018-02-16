@@ -1,7 +1,5 @@
 # Music Search
 
-> coding challenge
-
   - Ben Bucca
 
 ## Table of Contents
@@ -24,5 +22,6 @@ From within the root directory:
 
 ```sh
 npm install
-npm run
+npm run react-dev
+npm run server-dev
 ```
