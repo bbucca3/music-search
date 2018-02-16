@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
+// MusicInfo could be refactored to be stateless functional
+
 class MusicInfo extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +24,7 @@ class MusicInfo extends Component {
                         }
                       }}
             >
-              View Lyrics
+              Lyrics
             </Link>
         </td>
       </tr>

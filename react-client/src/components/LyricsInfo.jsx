@@ -12,8 +12,8 @@ class LyricsInfo extends Component {
   }
 
   componentDidMount() {
-    let artist = this.props.location.query.artistName.split(' ').join('+')
-    let song = this.props.location.query.trackName.split(' ').join('+')
+    const artist = this.props.location.query.artistName.split(' ').join('+')
+    const song = this.props.location.query.trackName.split(' ').join('+')
     $.ajax({
       type:'POST',
       url:'/api/lyricsearch',
@@ -52,7 +52,7 @@ class LyricsInfo extends Component {
           </table>
         </div>
         <div>
-          <h2>View Lyrics</h2>
+          <h2>Lyrics: </h2>
           {this.state.statusText}
           <div>{this.state.song.toString()}</div>
         </div>

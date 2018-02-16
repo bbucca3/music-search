@@ -16,7 +16,11 @@ class MusicSearch extends Component {
 
   handleMusicInput() {
     // clear input for new search
-    this.setState({musicList: []})
+    this.setState({musicList: []});
+
+    // if I had more time here I would sanitize the input string
+    // also I would take precautions on the server side xss injection
+    
     // search for artists and songs
     $.ajax({
       type:'POST',
@@ -69,7 +73,7 @@ class MusicSearch extends Component {
                     <th>Artist Name</th>
                     <th>Track Name</th>
                     <th>Album Name</th>
-                    <th>Lyrics</th>
+                    <th>View Lyrics</th>
                   </tr>
                   {this.state.musicList}
                 </tbody>
@@ -92,12 +96,12 @@ const buttonStyle = {
   fontWeight: '200',
   background: 'transparent',
   borderRadius: '4px',
-  margin: '20px 0',
+  margin: '10px 0',
   cursor: 'pointer',
   transition: 'all 0.3s ease',
   outline: 'none',
-  border: '1px solid #FE7880',
-  color: '#FE7880'
+  border: '1px solid darkGreen',
+  color: 'darkGreen'
 };
 
 export default MusicSearch;
