@@ -9,8 +9,6 @@ class LyricsInfo extends Component {
       statusText: '',
       song: {}
     }
-    console.log('lyrics props: ', props)
-    //API: <a href={this.state.url} target='_'>LINK </a>
   }
 
   componentDidMount() {
@@ -21,16 +19,11 @@ class LyricsInfo extends Component {
       url:'/api/lyricsearch',
       data:{artist, song},
       success: (results) => {
-        console.log('client lyrics results: ', results)
-        // this.setState({lyrics: song['lyrics']}, () => {
-        //   console.log('setState lyrics: ', this.state.results)
-        // })
         this.setState({song: results}, () => {
-          console.log('setState cb ', this.state)
+          console.log('setState callback: ', this.state)
         })
       },
       error: (err) => {
-        console.log('client lyrics error: ', err)
         this.setState({statusText: err.statusText})
       }
     })
@@ -38,7 +31,7 @@ class LyricsInfo extends Component {
 
   render() {
     return (
-      <div>
+      <div style={container}>
         <h2><Link to="/">New Search</Link></h2>
         <div>
           <table style={{width:'100%'}}>
@@ -50,10 +43,10 @@ class LyricsInfo extends Component {
                 <th>Album Name</th>
               </tr>
               <tr>
-                <td><img src={this.props.location.hash.albumArt} alt={this.props.location.hash.trackName}/></td>
-                <td>{this.props.location.hash.artistName}</td>
-                <td>{this.props.location.hash.trackName}</td>
-                <td>{this.props.location.hash.albumName}</td>
+                <td><img src={this.props.location.query.albumArt} alt={this.props.location.query.trackName}/></td>
+                <td>{this.props.location.query.artistName}</td>
+                <td>{this.props.location.query.trackName}</td>
+                <td>{this.props.location.query.albumName}</td>
               </tr>
             </tbody>
           </table>
@@ -67,5 +60,11 @@ class LyricsInfo extends Component {
     )
   }
 }
+
+const container = {
+  width: '90%',
+  marginLeft: 'auto',
+  marginRight: 'auto'
+};
 
 export default LyricsInfo;

@@ -15,7 +15,7 @@ class MusicSearch extends Component {
   }
 
   handleMusicInput() {
-    // clear input
+    // clear input for new search
     this.setState({musicList: []})
     // search for artists and songs
     $.ajax({
@@ -44,7 +44,7 @@ class MusicSearch extends Component {
 
   render() {
     return (
-        <div>
+        <div style={container}>
           <h3>Search for Musical Artist or Song: {this.state.musicInput}</h3>
           <div className="form-group">
             <input
@@ -79,6 +79,12 @@ class MusicSearch extends Component {
     );
   }
 }
+
+const container = {
+  width: '90%',
+  marginLeft: 'auto',
+  marginRight: 'auto'
+};
 
 const buttonStyle = {
   textAlign: 'center',
